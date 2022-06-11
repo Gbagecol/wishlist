@@ -16,6 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+
 #routing for all apps
 urlpatterns = [
     path("wishlist/", include("wishlist.urls")), #send requests to wishlist url to app
