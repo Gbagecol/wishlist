@@ -73,7 +73,9 @@ class WishlistEntry(models.Model):
 
     itemName = models.CharField(verbose_name="item name", max_length=200)
     linkToItem = models.TextField(verbose_name="link to item", blank=True) #optional link to a webpage for the item
-    itemIsClaimed = models.BooleanField(verbose_name="item has been claimed") #true if someone has claimed the item
+
+    #true if someone has claimed the item
+    itemIsClaimed = models.BooleanField(verbose_name="item has been claimed", default=False)
 
 
     #################
