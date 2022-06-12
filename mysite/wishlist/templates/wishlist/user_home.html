@@ -12,9 +12,13 @@
     <h1>Logged in as user: {{username}}</h1>
     <h2>Your wishlists:</h2>
 
+    <!-- display list of user's wishlists -->
     {% for wishlist in wishlistList %}
-        <li></li>
+        <li><a href="/wishlist/wishlist/{{wishlist.id}}">{{wishlist.name}}</a></li> <!-- link to specific wishlist -->
     {% endfor %}
+
+    <!-- create new wishlist for current user when clicked -->
+    <button type="button"><a href="/wishlist/user/{{username}}/createWishlist">Create New Wishlist</a></button>
 
   </body>
 

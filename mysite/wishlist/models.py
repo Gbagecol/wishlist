@@ -44,7 +44,7 @@ class Wishlist(models.Model):
 
     #each wishlist is associated with a user
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name="wishlist owner")
-    name = models.CharField(max_length=50, default="")
+    name = models.CharField(max_length=50, default="New Wishlist")
 
 
     #################
