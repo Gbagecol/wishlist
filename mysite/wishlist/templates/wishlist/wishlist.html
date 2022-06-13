@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Wishlist</title>
+  </head>
+
+  <body>
+
+    <p>Editing wishlist:</p>
+    <input type="text" id="wishlistName" value="{{wishlist.name}}">
+
+    <!-- display all entries -->
+    <table>
+
+        <tr>
+            <th>Claimed</th>
+            <th>Item</th>
+            <th>Link to Item</th>
+        </tr>
+
+        {% for entry in wishlistEntries %}
+            <tr>
+                <td>{{entry.itemIsClaimed}}</td>
+                <td>{{entry.itemName}}</td>
+                <td>{{entry.linkToItem}}</td>
+            </tr>
+        {% endfor %}
+
+    </table>
+
+  </body>
+
+</html>

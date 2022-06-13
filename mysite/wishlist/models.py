@@ -84,4 +84,4 @@ class WishlistEntry(models.Model):
     #################
 
     def __str__(self):
-        return "Entry for {} (wishlistId={})".format(self.itemName, self.wishlistId)
+        return "Entry for {} (wishlistId={})".format(self.itemName, self.wishlistId_id)

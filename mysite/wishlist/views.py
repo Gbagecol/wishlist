@@ -1,4 +1,4 @@
-from .models import User, Wishlist
+from .models import User, Wishlist, WishlistEntry
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
@@ -38,4 +38,12 @@ def wishlistView(request, wishlistId):
     The view for an existing wishlist.
     """
 
-    return HttpResponse("viewing wishlist {}".format(wishlistId))
+    wishlist = Wishlist.objects.get(id=wishlistId) #get wishlist from db
+    wishlistEntries = WishlistEntry.objects.filter(wishlistId_id=wishlistId) #get all entries for this wishlist
+
+    context = {
+        "wishlist": wishlist,
+        "wishlistEntries": wishlistEntries
+    }
+
+    return render(request, "wishlist/wishlist.html", context)
