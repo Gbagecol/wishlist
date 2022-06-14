@@ -3,14 +3,18 @@
 <html>
 
   <head>
+
     <meta charset="utf-8">
     <title>Edit Wishlist</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'wishlist/stylesheets/wishlist.css' %}">
+
   </head>
 
   <body>
 
-    <p>Editing wishlist:</p>
-    <input type="text" id="wishlistName" value="{{wishlist.name}}">
+    <span>Editing wishlist: </span><input type="text" id="wishlistName" value="{{wishlist.name}}"><hr>
 
     <!-- display all entries -->
     <table>

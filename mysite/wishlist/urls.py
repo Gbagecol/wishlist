@@ -1,4 +1,5 @@
 from . import views
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import path
 
 
@@ -8,4 +9,4 @@ urlpatterns = [
     path("user/<str:username>", views.userView, name="user"),
     path("user/<str:username>/createWishlist", views.createWishlistView, name="new wishlist"),
     path("wishlist/<int:wishlistId>", views.wishlistView, name="wishlist"),
-]
+] + staticfiles_urlpatterns()
