@@ -7,14 +7,21 @@
     <meta charset="utf-8">
     <title>Edit Wishlist</title>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> <!-- jquery -->
+
     {% load static %}
     <link rel="stylesheet" href="{% static 'wishlist/stylesheets/wishlist.css' %}">
+    <script src="{% static 'wishlist/javascript/wishlist.js' %}"></script>
 
   </head>
 
   <body>
 
-    <span>Editing wishlist: </span><input type="text" id="wishlistName" value="{{wishlist.name}}"><hr>
+    <span>Editing wishlist: </span>
+    <h3 id="wishlistName">{{wishlist.name}}</h3> <!-- for displaying wishlist name when not editing -->
+    <input type="text" id="wishlistNameInput" value="{{wishlist.name}}"> <!-- for editing wishlist name -->
+    <button type="button" id="changeNameButton">Change</button> <!-- triggers wishlist name editing -->
+    <hr>
 
     <!-- display all entries -->
     <table>
